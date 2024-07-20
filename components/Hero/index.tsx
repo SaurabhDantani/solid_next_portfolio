@@ -74,7 +74,7 @@ const Hero = () => {
                   className="absolute -right-6.5 bottom-0 z-1"
                 />
                 <div className=" relative aspect-[700/444] w-full">
-                  <iframe 
+                  {/* <iframe 
                   className="rounded-2xl"
                     width="560" 
                     height="315" 
@@ -82,7 +82,16 @@ const Hero = () => {
                     title="YouTube video player" 
                     frameBorder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                    referrerPolicy="strict-origin-when-cross-origin" allowFullScreen>                      
+                    </iframe> */}
+                    <div className="relative p-1 bg-white rounded-lg shadow-lg">
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 rounded-lg blur-sm anima" />
+      <div className="relative z-50 bg-white h-96 rounded-lg p-6">
+        <h2 className="text-2xl font-bold mb-2">Animated Card</h2>
+        <p className="text-gray-700">This is an animated card border using Tailwind CSS.</p>
+      </div>
+    </div>
+
                 </div>
               </div>
             </div>
