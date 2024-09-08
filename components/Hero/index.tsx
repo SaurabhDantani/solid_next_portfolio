@@ -54,20 +54,20 @@ const Hero = () => {
                       <div className="top-[3%] z-50 mx-auto h-80 max-w-c-1390 bg-pink-200">
 
                         <div className="overflow-hidden flex justify-center items-center bg-[url('/images/user/background.jpg')] bg-cover bg-center">
-                        <Image
-                          src="/images/user/saurabh.jpeg"
-                          alt="shape"
-                          width={90}
-                          height={21.66}
-                          className="z-50"
-                        />
+                          <Image
+                            src="/images/user/saurabh.jpeg"
+                            alt="shape"
+                            width={90}
+                            height={21.66}
+                            className="z-50"
+                          />
                         </div>
 
                         <div className="p-3">
                           <h1 className="text-black font-bold">Saurabh Dantani</h1>
                           <p className="text-black">A Passionate <strong>Full Stack Developer</strong> 🖥️ & having <strong>1 years of Experiences</strong> in 5+ Technologies so far.</p>
                         </div>
-                    
+
                         <div className="flex items-center gap-2 p-3">
                           <button
                             className="relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-white px-3 h-9 cursor-pointer
@@ -123,10 +123,10 @@ const Hero = () => {
                               width="22"
                               xmlns="http://www.w3.org/2000/svg"
                             >
-      <path
-        d="M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"
-      ></path>
-      <path d="M15 3v6h6"></path>
+                              <path
+                                d="M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"
+                              ></path>
+                              <path d="M15 3v6h6"></path>
                             </svg>
                             Articles
                           </button>
