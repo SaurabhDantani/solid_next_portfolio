@@ -7,193 +7,107 @@ const Hero = () => {
   const [email, setEmail] = useState("");
 
   return (
-    <>
-      <section className="overflow-hidden pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46">
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8 xl:gap-32.5">
-            <div className="w-full items-center text-center align-middle md:w-1/2">
-              <h4 className="mb-4.5 text-lg font-medium text-black dark:text-white">
-                <TypingEffect text="Hey 🔥" speed={100} />
-              </h4>
-              <h1 className="mb-5 pr-16 text-3xl font-bold text-black dark:text-white xl:text-hero ">
-                <TypingEffect
-                  text="I'am Saurabh Welcome to my portfolio."
-                  speed={100}
-                />
-              </h1>
-            </div>
+    <section className="relative flex flex-col items-center justify-center overflow-hidden pb-20 pt-20 lg:pt-40">
+      <div className="container mx-auto max-w-7xl px-4">
+        <div className="flex flex-col items-center justify-between lg:flex-row lg:gap-16">
+          {/* Left Section */}
+          <div className="w-full text-center lg:w-1/2 lg:text-left dark:text-white">
+            <h4 className="mb-3 text-lg font-medium text-gray-700 dark:text-white">
+              <TypingEffect text="Hey 🔥" speed={100} />
+            </h4>
+            <h1 className="mb-6 text-3xl font-bold leading-snug text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
+              <TypingEffect
+                text="I am Saurabh. Welcome to my portfolio."
+                speed={100}
+              />
+            </h1>
+          </div>
 
-            <div className="animate_right w-full md:w-1/2 lg:block">
-              <div className="relative 2xl:-mr-7.5">
-                <Image
-                  src="/images/shape/shape-01.png"
-                  alt="shape"
-                  width={46}
-                  height={246}
-                  className="absolute -left-11.5 top-0"
-                />
-                <Image
-                  src="/images/shape/shape-02.svg"
-                  alt="shape"
-                  width={36.9}
-                  height={36.7}
-                  className="absolute bottom-0 right-0 z-10"
-                />
-                <Image
-                  src="/images/shape/shape-03.svg"
-                  alt="shape"
-                  width={21.64}
-                  height={21.66}
-                  className="absolute -right-6.5 bottom-0 z-1"
-                />
-                <div className="relative aspect-[700/444] w-full">
-                  <div className="relative rounded-lg bg-white p-1 shadow-lg">
-                    <div className="anima absolute inset-0 rounded-lg bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 blur-sm" />
+          {/* Right Section */}
+          <div className="mt-10 w-full lg:mt-0 lg:w-1/2">
+            <div className="relative mx-auto max-w-sm rounded-lg bg-white shadow-lg lg:max-w-full">
+              <div className="absolute inset-0 z-0 rounded-lg bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 blur-md"></div>
+              <div className="relative z-10 p-6">
+                {/* Profile Image */}
+                <div className="relative mx-auto mb-4 flex justify-center">
+                  <Image
+                    src="/images/user/saurabh.jpeg"
+                    alt="Profile picture of Saurabh Dantani"
+                    width={160}
+                    height={160}
+                    className="rounded-full border-4 border-gradient-to-r from-blue-500 to-green-400"
+                  />
+                </div>
 
-                    <div className="relative z-0 h-96 rounded-lg bg-white p-6 ">
-                      <div className="top-[3%] z-50 mx-auto h-80 max-w-c-1390 bg-pink-200">
+                {/* Introduction */}
+                <div className="text-center">
+                  <h2 className="text-xl font-bold text-gray-900">
+                    Saurabh Dantani
+                  </h2>
+                  <p className="mt-2 text-gray-700">
+                    A Passionate <strong>Full Stack Developer</strong> with{" "}
+                    <strong>1 year of experience</strong> in 5+ technologies.
+                  </p>
+                </div>
 
-                        <div className="overflow-hidden flex justify-center items-center bg-[url('/images/user/background.jpg')] bg-cover bg-center">
-                          <Image
-                            src="/images/user/saurabh.jpeg"
-                            alt="shape"
-                            width={90}
-                            height={21.66}
-                            className="z-50"
-                          />
-                        </div>
-
-                        <div className="p-3">
-                          <h1 className="text-black font-bold">Saurabh Dantani</h1>
-                          <p className="text-black">A Passionate <strong>Full Stack Developer</strong> 🖥️ & having <strong>1 years of Experiences</strong> in 5+ Technologies so far.</p>
-                        </div>
-
-                        <div className="flex items-center gap-2 p-3">
-                          <button
-                            className="relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-white px-3 h-9 cursor-pointer
-                                        transition-colors hover:bg-[#F5F5F5] hover:text-[#60A5FA] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
-                                        disabled:pointer-events-none disabled:opacity-50 group"
-                          >
-                            <span
-                              className="absolute inset-0 rounded-md border-2 border-transparent group-hover:border-[#60A5FA]
-                                        before:absolute before:-inset-1 before:z-[-1] before:block before:rounded-md before:border-2 before:border-[#60A5FA]
-                                        before:animate-running-light"
-                            ></span>
-                            <svg
-                              className="lucide lucide-newspaper text-blue-400 dark:text-blue-600"
-                              stroke-linejoin="round"
-                              stroke-linecap="round"
-                              stroke-width="2"
-                              stroke="#60A5FA"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              height="22"
-                              width="22"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
-                              ></path>
-                              <path d="M18 14h-8"></path>
-                              <path d="M15 18h-5"></path>
-                              <path d="M10 6h8v4h-8V6Z"></path>
-                            </svg>
-                            Articles
-                          </button>
-
-                          <button
-                            className="relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-white px-3 h-9 cursor-pointer
-                                        transition-colors hover:bg-[#F5F5F5] hover:text-[#60A5FA] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
-                                        disabled:pointer-events-none disabled:opacity-50 group"
-                          >
-                            <span
-                              className="absolute inset-0 rounded-md border-2 border-transparent group-hover:border-[#60A5FA]
-                                        before:absolute before:-inset-1 before:z-[-1] before:block before:rounded-md before:border-2 before:border-[#60A5FA]
-                                        before:animate-running-light"
-                            ></span>
-                            <svg
-                              className="lucide lucide-newspaper text-blue-400 dark:text-blue-600"
-                              stroke-linejoin="round"
-                              stroke-linecap="round"
-                              stroke-width="2"
-                              stroke="#60A5FA"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              height="22"
-                              width="22"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"
-                              ></path>
-                              <path d="M15 3v6h6"></path>
-                            </svg>
-                            Articles
-                          </button>
-
-                          <button
-                            className="relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-white px-3 h-9 cursor-pointer
-                                        transition-colors hover:bg-[#F5F5F5] hover:text-[#60A5FA] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
-                                        disabled:pointer-events-none disabled:opacity-50 group"
-                          >
-                            <span
-                              className="absolute inset-0 rounded-md border-2 border-transparent group-hover:border-[#60A5FA]
-                                        before:absolute before:-inset-1 before:z-[-1] before:block before:rounded-md before:border-2 before:border-[#60A5FA]
-                                        before:animate-running-light"
-                            ></span>
-                            <svg
-                              className="lucide lucide-newspaper text-blue-400 dark:text-blue-600"
-                              stroke-linejoin="round"
-                              stroke-linecap="round"
-                              stroke-width="2"
-                              stroke="#60A5FA"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              height="22"
-                              width="22"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"
-                              ></path>
-                              <path d="M18 14h-8"></path>
-                              <path d="M15 18h-5"></path>
-                              <path d="M10 6h8v4h-8V6Z"></path>
-                            </svg>
-                            Articles
-                          </button>
-
-                          <style>
-                            {`@keyframes running-light {
-                              0% {
-                                border-color: transparent;
-                                box-shadow: 0 0 5px #60A5FA, 0 0 10px #60A5FA;
-                              }
-                              50% {
-                                border-color: #60A5FA;
-                                box-shadow: 0 0 20px #60A5FA, 0 0 30px #60A5FA;
-                              }
-                              100% {
-                                border-color: transparent;
-                                box-shadow: 0 0 5px #60A5FA, 0 0 10px #60A5FA;
-                              }
-                            }
-                            .animate-running-light {
-                              animation: running-light 1.5s infinite;
-                            }`}
-                          </style>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
+                {/* Social Media Buttons */}
+                <div className="mt-6 flex justify-center space-x-4">
+                  <a
+                    href="mailto:your.email@example.com"
+                    className="inline-block p-2 transition-colors duration-200 hover:text-blue-500"
+                    aria-label="Send an email"
+                  >
+                    <svg
+                      className="text-gray-600 h-6 w-6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M16 8c-.667.333-2 1-4 2s-3.333 1.667-4 2m6 6c4.333 0 6.5-3 6.5-8S17.333 2 12 2 3.5 5 3.5 10s2.167 8 6.5 8m0-8H3m18 0h-6"></path>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/your-profile"
+                    className="inline-block p-2 transition-colors duration-200 hover:text-blue-500"
+                    aria-label="Visit LinkedIn"
+                  >
+                    <svg
+                      className="text-gray-600 h-6 w-6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M16 8a6 6 0 0 1 6 6v5.5a.5.5 0 0 1-.5.5H12.5a.5.5 0 0 1-.5-.5V8.5a.5.5 0 0 1 .5-.5h6.5z"></path>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://wa.me/your-number"
+                    className="inline-block p-2 transition-colors duration-200 hover:text-blue-500"
+                    aria-label="Chat on WhatsApp"
+                  >
+                    <svg
+                      className="text-gray-600 h-6 w-6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M4 2.05V2a2.5 2.5 0 0 1 2.05 4.05c-.93.93-2.18 1.83-2.68 2.68S2 14 2 14s2.93-.93 4.1-2.1"></path>
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
