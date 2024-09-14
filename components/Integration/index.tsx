@@ -1,337 +1,71 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import SectionHeader from "../Common/SectionHeader";
+import { useEffect, useState } from "react";
 
 const Integration = () => {
+  const techStack = [
+    { name: "Node.js", logo: "/images/user/saurabh.jpeg" },
+    { name: "React.js", logo: "/images/user/saurabh.jpeg" },
+    { name: "Express.js", logo: "/images/user/saurabh.jpeg" },
+    { name: "Next.js", logo: "/logos/nextjs.svg" },
+    { name: "MongoDB", logo: "/logos/mongodb.svg" },
+  ];
+
+  // State to manage current slide
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    // Automatically change the slide every 3 seconds
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === techStack.length - 1 ? 0 : prev + 1));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [techStack.length]);
+
   return (
-    <>
-      <section>
-        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-          {/* <!-- Section Title Start --> */}
-          <SectionHeader
-            headerInfo={{
-              title: `INTEGRATIONS`,
-              subtitle: `Remotely Maintain Your Data, From Anywhere, Anytime.`,
-              description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`,
-            }}
-          />
+    <section>
+      <div className="container mx-auto py-10 px-4">
+        <h2 className="text-4xl font-bold text-center mb-10">Tech Stack</h2>
 
-          {/* <!-- Section Title End --> */}
+        <div className="relative overflow-hidden">
+          {/* Slider container */}
+          <motion.div
+            className="flex"
+            initial={{ x: 0 }}
+            animate={{ x: `-${currentSlide * 100}%` }}
+            // transition={{ duration: 0.5 }}
+            style={{ width: `${techStack.length * 100}%` }}
+          >
+            {techStack.map((tech, index) => (
+              <motion.div
+                key={index}
+                className="w-full flex-shrink-0 flex flex-col items-center justify-center"
+                style={{ width: "100%" }}
+              >
+                <motion.div
+                  className="rounded-full border-4 border-gray-300 hover:border-blue-500 p-4 transition-all duration-300 ease-in-out"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <img
+                    src={tech.logo}
+                    alt={tech.name}
+                    className="h-16 w-16 rounded-full"
+                  />
+                </motion.div>
+                <motion.span
+                  className="text-center text-white text-sm font-medium mt-4"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {tech.name}
+                </motion.span>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-
-        <div className="pattern-dots pattern-blue-500 pattern-bg-white pattern-size-4 pattern-opacity-10 relative z-50 mx-auto mt-15 max-w-c-1154 px-4 md:px-8 xl:mt-20 xl:px-0">
-          <div className="absolute -top-3/4 left-0 right-0 -z-1 mx-auto h-full w-full">
-            <Image
-              width={1200}
-              height={400}
-              sizes="(max-width: 768px) 100vw"
-              src="/images/shape/shape-dotted-light.svg"
-              alt="Dotted"
-              className="dark:hidden"
-              style={{ position: "static" }}
-            />
-            <Image
-              fill
-              src="/images/shape/shape-dotted-dark.svg"
-              alt="Dotted"
-              className="hidden dark:block"
-            />
-          </div>
-          <div className="flex flex-wrap justify-around gap-y-10">
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-1/6"
-            >
-              <div className="inline-block rounded-[10px] bg-white p-4.5 shadow-solid-7 dark:bg-btndark">
-                <Image
-                  width={50}
-                  height={50}
-                  src="./images/brand/brand-07.svg"
-                  alt="Brand"
-                />
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-1/6"
-            ></motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-1/6"
-            >
-              <div className="inline-block rounded-[10px] bg-white p-4.5 shadow-solid-7 dark:bg-btndark">
-                <Image
-                  width={50}
-                  height={50}
-                  src="./images/brand/brand-08.svg"
-                  alt="Brand"
-                />
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-1/6"
-            >
-              <div className="h-[11px] w-[11px] rounded-full bg-[#FFDB26]"></div>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-1/6"
-            >
-              <div className="inline-block rounded-[10px] bg-white p-4.5 shadow-solid-7 dark:bg-btndark">
-                <Image
-                  width={50}
-                  height={50}
-                  src="./images/brand/brand-09.svg"
-                  alt="Brand"
-                />
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-1/6"
-            ></motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-1/6"
-            >
-              <div className="h-[15px] w-[15px] rounded-full bg-[#62E888]"></div>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-1/6"
-            >
-              <div className="inline-block rounded-[10px] bg-white p-4.5 shadow-solid-7 dark:bg-btndark">
-                <Image
-                  width={50}
-                  height={50}
-                  src="./images/brand/brand-10.svg"
-                  alt="Brand"
-                />
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-1/6"
-            >
-              <div className="h-[23px] w-[23px] rounded-full bg-[#EF5C00]"></div>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-1/6"
-            >
-              <div className="inline-block rounded-[10px] bg-white p-4.5 shadow-solid-7 dark:bg-btndark">
-                <Image
-                  width={50}
-                  height={50}
-                  src="./images/brand/brand-11.svg"
-                  alt="Brand"
-                />
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-1/6"
-            >
-              <div className="h-[15px] w-[15px] rounded-full bg-[#016BFF]"></div>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-1/6"
-            >
-              <div className="inline-block rounded-[10px] bg-white p-4.5 shadow-solid-7 dark:bg-btndark">
-                <Image
-                  width={50}
-                  height={50}
-                  src="./images/brand/brand-12.svg"
-                  alt="Brand"
-                />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
